@@ -476,9 +476,8 @@ void Channel::BasicAck(const Envelope::DeliveryInfo &info, bool multiple) {
 }
 
 void Channel::BasicReject(const Envelope::ptr_t &message, bool requeue,
-                          
-                         ) {
-  BasicReject(message->GetDeliveryInfo(), requeue, multiple);
+                          bool multiple) {
+   BasicReject(message->GetDeliveryInfo(), requeue, multiple);
 }
 
 void Channel::BasicReject(const Envelope::DeliveryInfo &info, bool requeue,
