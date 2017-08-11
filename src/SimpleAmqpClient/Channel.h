@@ -515,7 +515,7 @@ class SIMPLEAMQPCLIENT_EXPORT Channel : boost::noncopyable {
     * Acknowledges a message delievered using BasicGet or BasicConsume
     * @param message the message that is being ack'ed
     */
-  void BasicAck(const Envelope::ptr_t &message);
+  void BasicAck(const Envelope::ptr_t &message, bool multiple = false);
 
   /**
    * Acknowledges a Basic message
@@ -524,7 +524,7 @@ class SIMPLEAMQPCLIENT_EXPORT Channel : boost::noncopyable {
    * doesn't require the Envelope object to Acknowledge
    * @param delivery_info
    */
-  void BasicAck(const Envelope::DeliveryInfo &info);
+  void BasicAck(const Envelope::DeliveryInfo &info, bool multiple = false);
 
   /**
     * Reject a Basic message
